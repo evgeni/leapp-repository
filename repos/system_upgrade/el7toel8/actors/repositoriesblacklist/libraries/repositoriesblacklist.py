@@ -39,7 +39,7 @@ def _report_excluded_repos(repos):
     )
 
     report = [
-        reporting.Title("Excluded RHEL 8 repositories"),
+        reporting.Title("Excluded target system repositories"),
         reporting.Summary(
             "The following repositories are not supported by "
             "Red Hat and are excluded from the list of repositories "

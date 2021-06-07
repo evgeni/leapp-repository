@@ -190,8 +190,8 @@ def test_repositoriesblacklist_empty(monkeypatch, repofacts_opts_disabled, repom
     ("enabled_repo", "exp_report_title", "message_produced"),
     [
         ("codeready-builder-for-rhel-8-x86_64-rpms", "Using repository not supported by Red Hat", False),
-        ("some_other_enabled_repo", "Excluded RHEL 8 repositories", True),
-        (None, "Excluded RHEL 8 repositories", True),
+        ("some_other_enabled_repo", "Excluded target system repositories", True),
+        (None, "Excluded target system repositories", True),
     ],
 )
 def test_enablerepo_option(monkeypatch,

@@ -29,11 +29,15 @@ class FilterRpmTransactionTasks(Actor):
         to_remove = set()
         to_keep = set()
         to_upgrade = set()
+        modules_to_enable = set()
+        modules_to_reset = set()
         for event in self.consume(RpmTransactionTasks, PESRpmTransactionTasks):
             local_rpms.update(event.local_rpms)
             to_install.update(event.to_install)
             to_remove.update(installed_pkgs.intersection(event.to_remove))
             to_keep.update(installed_pkgs.intersection(event.to_keep))
+            modules_to_enable.update(event.modules_to_enable)
+            modules_to_reset.update(event.modules_to_reset)
 
         to_remove.difference_update(to_keep)
 
@@ -45,4 +49,6 @@ class FilterRpmTransactionTasks(Actor):
             to_install=list(to_install),
             to_remove=list(to_remove),
             to_keep=list(to_keep),
-            to_upgrade=list(to_upgrade)))
+            to_upgrade=list(to_upgrade),
+            modules_to_reset=list(modules_to_reset),
+            modules_to_enable=list(modules_to_enable)))
