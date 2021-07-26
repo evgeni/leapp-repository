@@ -15,7 +15,7 @@ OP_MAP = {
 
 _SUPPORTED_VERSIONS = {
     # Note: 'rhel-alt' is detected when on 'rhel' with kernel 4.x
-    '7': {'rhel': ['7.9'], 'rhel-alt': [], 'rhel-saphana': ['7.9']},
+    '7': {'rhel': ['7.9'], 'rhel-alt': [], 'rhel-saphana': ['7.9'], 'centos': ['7.9']},
     '8': {'rhel': ['8.8', '8.10'], 'rhel-saphana': ['8.8', '8.10']},
 }
 
