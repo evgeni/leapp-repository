@@ -13,7 +13,7 @@ LEAPP_UPGRADE_FLAVOUR_DEFAULT = 'default'
 LEAPP_UPGRADE_FLAVOUR_SAP_HANA = 'saphana'
 LEAPP_UPGRADE_PATHS = 'upgrade_paths.json'
 
-VERSION_REGEX = re.compile(r"^([1-9]\d*)\.(\d+)$")
+VERSION_REGEX = re.compile(r"^([1-9]\d*)(\.(\d+))?$")
 
 
 def check_version(version):
