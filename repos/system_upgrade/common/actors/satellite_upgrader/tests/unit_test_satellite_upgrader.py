@@ -28,7 +28,7 @@ def test_run_installer(monkeypatch, current_actor_context):
 def test_run_installer_without_katello(monkeypatch, current_actor_context):
     mocked_run = MockedRun()
     monkeypatch.setattr('leapp.libraries.stdlib.run', mocked_run)
-    current_actor_context.feed(SatelliteFacts(has_foreman=True, has_katello_installer=False,
+    current_actor_context.feed(SatelliteFacts(has_foreman=True, installer_has_systemchecks=False,
                                               postgresql=SatellitePostgresqlFacts(local_postgresql=False)))
     current_actor_context.run()
     assert mocked_run.commands

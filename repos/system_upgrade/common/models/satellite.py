@@ -22,7 +22,7 @@ class SatelliteFacts(Model):
 
     has_foreman = fields.Boolean(default=False)
     """Whether or not foreman is installed on this system"""
-    has_katello_installer = fields.Boolean(default=True)
-    """Whether or not the installer supports Katello additions"""
+    installer_has_systemchecks = fields.Boolean(default=True)
+    """Whether or not the installer supports --disable-systemchecks flag"""
     postgresql = fields.Model(SatellitePostgresqlFacts)
     """ Foreman related PostgreSQL facts """

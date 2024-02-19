@@ -29,7 +29,7 @@ class SatelliteUpgrader(Actor):
                 api.current_logger().error('Failed to reindex the database: {}'.format(str(e)))
 
         installer_cmd = ['foreman-installer']
-        if facts.has_katello_installer:
+        if facts.installer_has_systemchecks:
             installer_cmd.append('--disable-system-checks')
 
         api.current_actor().show_message('Running the installer. This can take a while.')
