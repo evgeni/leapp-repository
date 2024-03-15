@@ -29,8 +29,6 @@ jobs:
 - job: copr_build
   trigger: pull_request
   metadata:
-    owner: "@oamg"
-    project: leapp
     targets:
     - epel-7-x86_64
     - epel-8-x86_64
@@ -49,8 +47,6 @@ jobs:
   trigger: commit
   metadata:
     branch: master
-    owner: "@oamg"
-    project: leapp
     targets:
     - epel-7-x86_64
     - epel-8-x86_64
@@ -68,8 +64,6 @@ jobs:
 - job: copr_build
   trigger: release
   metadata:
-    owner: "@oamg"
-    project: leapp
     targets:
     - epel-7-x86_64
     - epel-8-x86_64
